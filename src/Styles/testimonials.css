@@ -1,0 +1,7 @@
+@media (max-width: 440px) {
+  .cardMobile {
+    height: 1045px;
+    width: 100%;
+    scroll-snap-align: start;
+  }
+}

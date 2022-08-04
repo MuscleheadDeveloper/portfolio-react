@@ -1,0 +1,31 @@
+/* ./src/index.css */
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.card {
+  @apply w-full snap-start;
+}
+.headerItemContainer {
+  @apply flex items-center ml-7;
+}
+.headerItemContainerText {
+  @apply text-sm lg:text-base font-medium ;
+}
+.headerItemContainerIcon {
+  @apply text-4xl mr-1;
+}
+.lists {
+  @apply mb-10 hover:text-purple-400;
+}
+.portfolioList {
+  @apply  text-sm sm:text-base sm:mr-12 p-2 rounded-xl text-gray-600 cursor-pointer;
+}
+.actived {
+  @apply bg-purple-700 text-white;
+}
+.isFeatured{
+  @apply w-72 h-3/4 mx-7
+}
