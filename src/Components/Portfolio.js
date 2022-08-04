@@ -18,35 +18,34 @@ function Portfolio() {
     { id: "pR.js", title: "Plain react.js" },
     { id: "tCSS", title: "TailwindCSS" },
     { id: "v.js", title: "VanillaJs" },
-    {id: "FS", title: "Fullstack"}
+    { id: "FS", title: "Fullstack" },
   ];
 
-
-  useEffect(()=>{
-        Aos.init({
-          once: true,
-        });
-     switch (selected) {
-       case 'ea':
-         setData(earlyPortfolio)
-         break;
-       case 'pR.js':
-         setData(plainReactPortfolio)
-         break;
-       case 'tCSS':
-         setData(TailwindCSSPortfolio)
-         break;
-       case 'v.js':
-         setData(vanillaJSPortfolio)
-         break;
-       case 'FS':
-         setData(fullstackPortfolio)
-         break;
-       default:
-         setData(TailwindCSSPortfolio)
-         break;
-     }
-  }, [selected])
+  useEffect(() => {
+    Aos.init({
+      once: true,
+    });
+    switch (selected) {
+      case "ea":
+        setData(earlyPortfolio);
+        break;
+      case "pR.js":
+        setData(plainReactPortfolio);
+        break;
+      case "tCSS":
+        setData(TailwindCSSPortfolio);
+        break;
+      case "v.js":
+        setData(vanillaJSPortfolio);
+        break;
+      case "FS":
+        setData(fullstackPortfolio);
+        break;
+      default:
+        setData(TailwindCSSPortfolio);
+        break;
+    }
+  }, [selected]);
   return (
     <div
       data-aos="flip-left"
@@ -67,19 +66,23 @@ function Portfolio() {
           />
         ))}
       </ul>
+
       <div className=" h-full w-full sm:w-2/3 flex sm:items-center justify-center flex-wrap">
+        {" "}
         {data.map((d) => (
           <div
             className="transition duration-500 ease-in hover:bg-purple-700 cursor-pointer relative text-white flex items-center justify-center 
-        w-32 h-20 sm:w-56 sm:h-36 mx-2 my-2 rounded-lg border-b border-gray-300"
+               w-32 h-20 sm:w-56 sm:h-36 mx-2 my-2 rounded-lg border-b border-gray-300"
           >
-            <img
-              src={d.img}
-              className="w-20 sm:w-full sm:h-full object-cover z-10 rounded-t hover:opacity-20 hover:z-0 bg-purple-700"
-            />
-            <h3 className="absolute text-base sm:text-xl text-white">
-              {d.title}
-            </h3>
+            <a href={d.link} target="_blank">
+              <img
+                src={d.img}
+                className="w-20 sm:w-full sm:h-full object-cover z-10 rounded-t hover:opacity-20 hover:z-0 bg-purple-700"
+              />
+              <h3 className="absolute text-base sm:text-xl text-white">
+                {d.title}
+              </h3>
+            </a>
           </div>
         ))}
       </div>
